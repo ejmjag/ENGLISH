@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KT English Guide · MAGIST</title>
+<style>
+:root{
+ --ink:#172238;--muted:#687386;--paper:#fbfaf7;--white:#fff;
+ --a:#ff5f45;--a2:#ff9b67;--sun:#ffd76a;--mint:#6dd7bd;--sky:#8dc9ff;
+ --line:#e8e3da;--shadow:0 30px 80px rgba(44,51,67,.13);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 10% 5%,#fff0c8 0,transparent 23%),
+radial-gradient(circle at 92% 12%,#dff6ef 0,transparent 23%),
+linear-gradient(180deg,#fffdf8,#f8f7f3 48%,#fff);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(#53627a10 1px,transparent 1px),linear-gradient(90deg,#53627a10 1px,transparent 1px);background-size:42px 42px}
+.wrap{width:min(1160px,calc(100% - 30px));margin:auto;position:relative}
+nav{position:sticky;top:12px;z-index:20;margin-top:12px;padding:10px 12px;border:1px solid #ffffff;border-radius:18px;background:#ffffffc9;backdrop-filter:blur(18px);box-shadow:0 10px 40px #33415512;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:950;letter-spacing:-.04em}.brand i{font-style:normal;color:var(--a)}
+.lang{display:flex;background:#f1eee8;border-radius:12px;padding:4px;gap:3px}.lang button{border:0;background:transparent;padding:8px 12px;border-radius:9px;font-weight:850;color:#77808e}.lang button.on{background:#172238;color:#fff}
+[data-lang]{display:none}html[data-language="kk"] [data-lang="kk"],html[data-language="ru"] [data-lang="ru"]{display:block}
+span[data-lang]{display:none!important}html[data-language="kk"] span[data-lang="kk"],html[data-language="ru"] span[data-lang="ru"]{display:inline!important}
+
+.magist-top{margin-top:22px;position:relative;overflow:hidden;border-radius:30px;padding:28px;background:linear-gradient(120deg,#172238,#263a5a);color:white;box-shadow:0 26px 65px #1722382b;transform:perspective(1200px) rotateX(.8deg)}
+.magist-top:after{content:"MAGIST";position:absolute;right:-18px;bottom:-46px;font-size:120px;font-weight:1000;letter-spacing:-.08em;color:#ffffff08}
+.magist-top .grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px}.eyebrow{font-size:11px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#ffb69e}
+.magist-top h2{font-size:clamp(26px,4vw,44px);line-height:1;margin:8px 0 10px;letter-spacing:-.045em}.magist-top p{max-width:700px;color:#dce3ed;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:13px;background:var(--a);color:#fff;text-decoration:none;font-weight:900;box-shadow:0 12px 28px #ff5f4540;white-space:nowrap}
+
+.hero{min-height:700px;display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:40px;padding:70px 0 60px}
+.kicker{font-size:12px;font-weight:950;letter-spacing:.17em;text-transform:uppercase;color:var(--a)}
+h1{font-size:clamp(58px,8.5vw,108px);line-height:.82;letter-spacing:-.075em;margin:15px 0 26px;max-width:780px}
+.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:660px}
+.path{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.chip{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:800;font-size:13px}
+.scene{height:510px;position:relative;perspective:1200px}.orb{position:absolute;left:50%;top:50%;width:245px;height:245px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 34% 28%,#fff 0 8%,#ffd56b 19%,#ff805d 53%,#dd4e56 100%);box-shadow:inset -28px -32px 55px #9b293b36,0 45px 80px #f36b4e34;display:grid;place-items:center;animation:float 5s ease-in-out infinite}.orb b{font-size:74px;letter-spacing:-.07em}.orb small{display:block;text-align:center;font-weight:900;margin-top:-14px}
+.ring{position:absolute;left:50%;top:50%;width:410px;height:190px;border:2px solid #1722382b;border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg);box-shadow:0 0 0 12px #fff5}
+.float{position:absolute;padding:17px 20px;border-radius:20px;background:#ffffffd9;border:1px solid #fff;box-shadow:0 22px 60px #46526720;backdrop-filter:blur(12px);font-weight:900}.float span{display:block;font-size:12px;color:#818998;font-weight:700}.f1{left:2%;top:70px;transform:rotate(-7deg)}.f2{right:0;top:150px;transform:rotate(7deg)}.f3{left:15%;bottom:65px;transform:rotate(5deg)}
+@keyframes float{50%{transform:translate(-50%,-54%)}}
+
+.section{padding:90px 0}.num{font-size:12px;letter-spacing:.18em;font-weight:950;color:var(--a)}h2.title{font-size:clamp(42px,7vw,78px);line-height:.95;letter-spacing:-.06em;margin:9px 0 15px}.lead{font-size:18px;color:var(--muted);max-width:780px;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}.card{position:relative;padding:25px;border:1px solid var(--line);border-radius:25px;background:#ffffffcf;box-shadow:0 16px 55px #4755690e;transition:.25s;overflow:hidden}.card:hover{transform:translateY(-6px) rotateX(1deg);box-shadow:var(--shadow)}.card .n{font-size:46px;font-weight:950;letter-spacing:-.06em}.card h3{font-size:20px;margin:12px 0 8px}.card p{color:var(--muted);line-height:1.65;margin:0}.card:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-35px;top:-35px;background:#ff775d16}
+
+.strategy{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px;margin-top:38px}.sticky{position:sticky;top:100px;align-self:start;padding:28px;border-radius:27px;background:#172238;color:#fff;box-shadow:0 24px 70px #17223828}.sticky h3{font-size:30px;margin:8px 0}.sticky p{color:#cbd5e1}.steps{display:grid;gap:13px}.step{padding:22px;border:1px solid var(--line);border-radius:21px;background:#fff}.step b{font-size:18px}.step p{margin:7px 0 0;color:var(--muted);line-height:1.65}.example{margin-top:12px;padding:13px 15px;border-radius:14px;background:#f7f4ee;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.65}
+
+.grammar{padding:95px 0;background:linear-gradient(180deg,#fff7ef00,#fff4e9 20%,#fff8ef 80%,transparent);position:relative}
+.grammar-map{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:35px}.g{padding:25px;border-radius:25px;background:#fff;border:1px solid #f0ded2;box-shadow:0 18px 55px #8f60430d}.g .tag{display:inline-block;padding:6px 9px;border-radius:8px;background:#fff0e8;color:#d94e35;font-size:11px;font-weight:950;letter-spacing:.08em}.g h3{font-size:25px;margin:12px 0}.formula{padding:13px 15px;border-radius:14px;background:#172238;color:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.7}.markers{margin-top:12px;color:var(--muted);line-height:1.65}.learnbox{margin-top:28px;padding:30px;border-radius:30px;background:linear-gradient(135deg,#ffe17e,#ffb978);box-shadow:0 25px 70px #dc8a4725}.learnbox h3{font-size:32px;margin:0 0 8px}.phrases{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}.phrase{padding:12px;border-radius:13px;background:#ffffffb5;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:750}
+
+.exam-flow{margin-top:35px;display:flex;align-items:stretch;gap:8px}.flow{flex:1;padding:19px;border-radius:19px;background:#fff;border:1px solid var(--line)}.flow small{color:var(--a);font-weight:950}.flow b{display:block;margin-top:5px}.arrow{display:grid;place-items:center;font-weight:950;color:#a5adba}
+
+.final{margin:80px 0;padding:45px;border-radius:35px;background:linear-gradient(130deg,#172238 0%,#293d5e 60%,#405875);color:#fff;position:relative;overflow:hidden;box-shadow:0 35px 90px #1722382b}.final:after{content:"50";position:absolute;right:-10px;bottom:-100px;font-size:300px;font-weight:1000;color:#ffffff08;letter-spacing:-.1em}.final>*{position:relative;z-index:1}.final h2{font-size:clamp(40px,6vw,70px);line-height:.95;letter-spacing:-.06em;margin:10px 0 15px}.final p{max-width:720px;color:#d7dfeb;font-size:17px;line-height:1.7}.final .btn{margin-top:12px}
+footer{padding:25px 0 55px;color:#8a929f;font-size:13px;text-align:center}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:55px}.scene{height:400px}.cards,.grammar-map{grid-template-columns:1fr}.strategy{grid-template-columns:1fr}.sticky{position:relative;top:auto}.phrases{grid-template-columns:1fr 1fr}.magist-top .grid{grid-template-columns:1fr}.exam-flow{display:grid;grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+@media(max-width:520px){h1{font-size:58px}.scene{height:330px}.orb{width:180px;height:180px}.orb b{font-size:55px}.ring{width:300px;height:145px}.float{padding:12px 14px;font-size:13px}.phrases{grid-template-columns:1fr}.final{padding:30px}.magist-top{padding:22px}}
+
+.vocab-zone{margin-top:32px;padding:30px;border:1px solid #dfe8e3;border-radius:30px;background:linear-gradient(135deg,#f4fff9,#fffaf1);box-shadow:0 22px 65px #435b5010}
+.vocab-zone h3{font-size:32px;letter-spacing:-.04em;margin:0 0 8px}
+.vocab-zone>p{color:var(--muted);margin:0 0 18px}
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.vocab{padding:14px 15px;border-radius:15px;background:#fff;border:1px solid #e9e7df;display:grid;grid-template-columns:1fr 1.25fr;gap:12px;align-items:start}
+.vocab strong{font-size:14px}.vocab span{font-size:13px;color:#657184;line-height:1.45}
+@media(max-width:650px){.vocab-grid{grid-template-columns:1fr}.vocab{grid-template-columns:1fr}}
+
+.explain-card{margin-top:12px;padding:16px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.explain-card .en{font-weight:850;line-height:1.6}
+.explain-card .tr{margin-top:7px;color:#566274;line-height:1.65}
+.explain-card .why{margin-top:10px;padding-top:10px;border-top:1px dashed #ddd5ca;line-height:1.65}
+.explain-card .why strong{color:#d94e35}
+
+.deep-dive{margin-top:38px;display:grid;gap:14px}
+.deep-card{padding:24px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 15px 45px #4755690c}
+.deep-card h3{margin:0 0 9px;font-size:21px;letter-spacing:-.02em}
+.deep-card p{margin:7px 0;color:var(--muted);line-height:1.72}
+.deep-card .sample{margin-top:13px;padding:15px;border-radius:15px;background:#f7f4ee;border:1px solid #ece6dc}
+.deep-card .sample b{display:block;margin-bottom:5px}
+.deep-card .answer{margin-top:10px;padding-top:10px;border-top:1px dashed #d8d1c6}
+.deep-card .answer strong{color:#d94f37}
+.deep-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.deep-title{margin-top:50px;font-size:clamp(30px,5vw,48px);letter-spacing:-.045em;line-height:1}
+@media(max-width:760px){.deep-grid{grid-template-columns:1fr}}
+
+/* ===== MOBILE-FIRST PHONE UX ===== */
+@media (max-width: 600px){
+  html{scroll-padding-top:78px}
+  body{font-size:16px;line-height:1.62;-webkit-text-size-adjust:100%;overflow-x:hidden}
+  .wrap{width:min(100% - 24px,1160px)}
+  .nav{top:6px;margin-top:6px;padding:8px 9px;border-radius:15px}
+  .logo{font-size:15px}
+  .langs button{min-width:52px;min-height:40px;padding:8px 10px;font-size:13px}
+
+  .magist-top,.ad{margin-top:14px!important;padding:18px!important;border-radius:22px!important}
+  .magist-top .grid,.adgrid{grid-template-columns:1fr!important;gap:14px!important}
+  .magist-top h2,.ad h2{font-size:27px!important;line-height:1.04!important;margin:6px 0 9px!important}
+  .magist-top p,.ad p{font-size:14px!important;line-height:1.55!important}
+  .btn{width:100%;min-height:48px;justify-content:center;text-align:center;padding:13px 16px!important}
+
+  .hero{min-height:auto!important;display:block!important;padding:45px 0 28px!important}
+  .kicker,.secno{font-size:10px!important;letter-spacing:.12em!important}
+  h1{font-size:clamp(48px,15vw,68px)!important;line-height:.88!important;margin:12px 0 18px!important}
+  .lead,.intro{font-size:16px!important;line-height:1.62!important}
+  .chips{gap:7px!important;margin-top:18px!important}
+  .chip{font-size:12px!important;padding:8px 10px!important}
+  .scene{height:280px!important;margin-top:20px!important}
+  .orb,.sphere{width:160px!important;height:160px!important}
+  .orb b,.sphere b{font-size:48px!important}
+  .ring{width:260px!important;height:125px!important}
+  .float{font-size:11px!important;padding:9px 11px!important;border-radius:13px!important}
+  .f1{left:0!important;top:38px!important}.f2{right:0!important;top:105px!important}.f3{left:7%!important;bottom:28px!important}
+
+  .section{padding:58px 0!important}
+  h2.big{font-size:clamp(38px,12vw,52px)!important;line-height:.96!important;margin:9px 0 15px!important}
+  .how,.exam-flow{grid-template-columns:1fr!important;gap:8px!important;margin:22px 0!important}
+  .how div{padding:15px!important;border-radius:16px!important}
+  .arrow{transform:rotate(90deg)}
+  .cards,.guide,.grammar-map,.formula-grid,.strategy,.deep-grid{grid-template-columns:1fr!important;gap:12px!important;margin-top:22px!important}
+  .card,.tip,.formula,.deep-card{padding:18px!important;border-radius:20px!important}
+  .tip h3,.deep-card h3{font-size:20px!important;line-height:1.18!important}
+  .tip p,.deep-card p,.detail{font-size:15px!important;line-height:1.65!important}
+  .ex,.sample,.explain-card{padding:14px!important;border-radius:14px!important;overflow-wrap:anywhere}
+  .en{font-size:15px!important;line-height:1.55!important}
+  .tr,.why,.answer{font-size:14px!important;line-height:1.6!important}
+  .rule,.code{font-size:12px!important;line-height:1.65!important;white-space:normal!important;overflow-wrap:anywhere}
+  .deep-title{font-size:34px!important;margin-top:36px!important}
+  .full{grid-column:auto!important}
+
+  .memorize{padding:20px!important;border-radius:22px!important}
+  .memorize h3{font-size:25px!important;line-height:1.1!important}
+  .phrases{grid-template-columns:1fr!important;gap:7px!important}
+  .phrase{font-size:12px!important;padding:11px!important;overflow-wrap:anywhere}
+  .check{padding:20px!important;border-radius:22px!important}
+  .check h3{font-size:24px!important;line-height:1.1!important}
+  .check ol{padding-left:20px!important}
+  .check li{font-size:14px!important;line-height:1.6!important;margin:7px 0!important}
+
+  .final{margin:48px 0 28px!important;padding:24px!important;border-radius:25px!important}
+  .final h2{font-size:39px!important}
+  .final p{font-size:15px!important}
+  footer{padding-bottom:30px!important}
+
+  table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  img,video,iframe{max-width:100%;height:auto}
+  a,button{touch-action:manipulation}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="brand">KT/<i>ENGLISH</i></div><div class="lang"><button class="on" data-set="kk">ҚАЗ</button><button data-set="ru">РУС</button></div></nav>
+
+<section class="magist-top">
+<div class="grid">
+<div>
+<div class="eyebrow">MAGIST · ONLINE PLATFORM</div>
+<div data-lang="kk"><h2>КТ-ға дайындықты қазір баста</h2><p>MAGIST платформасында тегін тесттер бар. Тестті орындап қана қоймай, әр жауаптың түсіндірмесін қарап, қатеңнің себебін талда.</p></div>
+<div data-lang="ru"><h2>Начни подготовку к КТ прямо сейчас</h2><p>На платформе MAGIST есть бесплатные тесты. Не просто решай задания – разбирай объяснения к ответам и понимай причину каждой ошибки.</p></div>
+</div>
+<a class="btn" href="https://www.magist.online" target="_blank"><span data-lang="kk">Тегін тест →</span><span data-lang="ru">Бесплатный тест →</span></a>
+</div></section>
+
+<section class="hero">
+<div>
+<div class="kicker">MASTER'S KT · ENGLISH GUIDE</div>
+<div data-lang="kk"><h1>50 сұрақ.<br>3 бөлім.<br>Бір жүйе.</h1><p>Listening, Reading және Grammar-ды ретімен дайында. Бұл бет – жай кеңестер жинағы емес: әр бөлімде не іздеу керек, қандай қақпанға түспеу керек және грамматикадан нені жаттау керегін көрсететін дайын маршрут.</p></div>
+<div data-lang="ru"><h1>50 вопросов.<br>3 блока.<br>Одна система.</h1><p>Готовь Listening, Reading и Grammar последовательно. Это не просто список советов: здесь собран маршрут – что искать в задании, какие ловушки замечать и что именно учить по грамматике.</p></div>
+<div class="path"><span class="chip">16 · Listening</span><span class="chip">16 · Reading</span><span class="chip">18 · Grammar</span></div>
+</div>
+<div class="scene"><div class="ring"></div><div class="orb"><div><b>50</b><small>QUESTIONS</small></div></div><div class="float f1">16 · Listening<span>hear → catch → confirm</span></div><div class="float f2">18 · Grammar<span>formula → marker → form</span></div><div class="float f3">16 · Reading<span>scan → evidence → answer</span></div></div>
+</section>
+
+<section class="section" id="listening">
+<div class="num">01 / LISTENING</div>
+<div data-lang="kk"><h2 class="title">Бәрін аударма.<br>Жауапты тыңда.</h2><p class="lead">Listening-де мақсат – әр сөзді түсіну емес. Сұрақ нені сұрап тұрғанын алдын ала біліп, аудиодан сол ақпараттың парафразын, өзгерісін және соңғы шешімін ұстау.</p></div>
+<div data-lang="ru"><h2 class="title">Не переводи всё.<br>Слушай ответ.</h2><p class="lead">В Listening задача не в том, чтобы понять каждое слово. Сначала пойми, какую информацию спрашивают, затем лови в аудио парафраз, изменение и финальное решение.</p></div>
+<div class="cards">
+<div class="card"><div class="n">01</div><h3><span data-lang="kk">Алдымен сұрақ</span><span data-lang="ru">Сначала вопрос</span></h3><p data-lang="kk">Аудио басталмай тұрып сұрақ пен варианттарды оқы. WHY, WHEN, WHERE, WHO, HOW MUCH – қандай ақпарат керек екенін бірден анықта.</p><p data-lang="ru">До аудио прочитай вопрос и варианты. WHY, WHEN, WHERE, WHO, HOW MUCH сразу показывают, какую информацию нужно ловить.</p></div>
+<div class="card"><div class="n">02</div><h3><span data-lang="kk">Парафразды таны</span><span data-lang="ru">Узнавай парафраз</span></h3><p data-lang="kk">Сұрақтағы сөз аудиода дәл қайталанбауы мүмкін: difficult → hard, late → couldn't arrive on time. Синонимді таны.</p><p data-lang="ru">Слово из вопроса может не повториться буквально: difficult → hard, late → couldn't arrive on time. Узнавай смысл, а не копию слова.</p></div>
+<div class="card"><div class="n">03</div><h3><span data-lang="kk">Соңғы шешімді күт</span><span data-lang="ru">Жди финальное решение</span></h3><p data-lang="kk">but, actually, instead, however, finally, in the end – жауаптың өзгергенін көрсететін сигналдар.</p><p data-lang="ru">but, actually, instead, however, finally, in the end – сигналы, после которых ответ часто меняется.</p></div>
+</div>
+<div class="strategy">
+<div class="sticky"><div class="eyebrow">LISTENING ALGORITHM</div><h3 data-lang="kk">5 қадам</h3><h3 data-lang="ru">5 шагов</h3><p data-lang="kk">Сұрақ → keyword → тыңдау → өзгерісті байқау → final answer.</p><p data-lang="ru">Вопрос → keyword → слушай → замечай изменение → final answer.</p></div>
+<div class="steps">
+<div class="step"><b>Numbers & dates</b><p data-lang="kk">Бір аудиода бірнеше сан болуы мүмкін. Кімге, қай күнге, қандай бағаға қатысты екенін тексер.</p><p data-lang="ru">В одном аудио может быть несколько чисел. Проверяй, к кому, дате или цене относится вопрос.</p><div class="explain-card">
+<div class="en">The ticket normally costs £25, but students pay £18.</div>
+<div class="tr" data-lang="kk">Аудармасы: Билет әдетте £25 тұрады, бірақ студенттер £18 төлейді.</div>
+<div class="tr" data-lang="ru">Перевод: Обычно билет стоит £25, но студенты платят £18.</div>
+<div class="why" data-lang="kk"><strong>Неге £18 дұрыс?</strong> Сұрақ студент төлейтін бағаны сұраса, жауап – £18. £25 – билеттің қалыпты бағасы, сондықтан бұл жерде қате вариант.</div>
+<div class="why" data-lang="ru"><strong>Почему £18 правильно?</strong> Если спрашивают цену для студента, ответ – £18. £25 – обычная цена билета, поэтому для этого вопроса это неправильный вариант.</div>
+</div></div>
+<div class="step"><b>Correction trap</b><p data-lang="kk">Алғашқы айтылған жауапқа асықпа. Speaker өзін түзетуі мүмкін.</p><p data-lang="ru">Не выбирай первое услышанное значение автоматически. Говорящий может себя исправить.</p><div class="explain-card">
+<div class="en">“I’ll take the train… Actually, I’ll take the bus instead.”</div>
+<div class="tr" data-lang="kk">Аудармасы: «Мен пойызбен барамын… Жоқ, негізі, оның орнына автобуспен барамын».</div>
+<div class="tr" data-lang="ru">Перевод: «Я поеду на поезде… Вообще-то, вместо этого я поеду на автобусе».</div>
+<div class="why" data-lang="kk"><strong>Неге bus дұрыс?</strong> Алдымен train айтылды, бірақ actually және instead арқылы speaker шешімін өзгертті. Соңғы шешім – bus. Сондықтан train – қақпан.</div>
+<div class="why" data-lang="ru"><strong>Почему bus правильно?</strong> Сначала прозвучал train, но слова actually и instead показывают изменение решения. Финальный выбор – bus. Поэтому train – ловушка.</div>
+</div></div>
+<div class="step"><b>Unknown word</b><p data-lang="kk">Бір сөзді білмесең, тоқтап қалма. Егер сұрақ уақыт туралы болса – уақытты тыңда.</p><p data-lang="ru">Не застревай на незнакомом слове. Если вопрос о времени – ищи время.</p><div class="explain-card">
+<div class="en">“The magnificent exhibition… we arrived at half past three.”</div>
+<div class="tr" data-lang="kk">Аудармасы: «Керемет көрме… біз үш жарымда келдік».</div>
+<div class="tr" data-lang="ru">Перевод: «Великолепная выставка… мы приехали в половине четвёртого».</div>
+<div class="why" data-lang="kk"><strong>Неге 3:30 дұрыс?</strong> half past three = 3:30. magnificent және exhibition сөздерін білмесең де, уақыт туралы сұраққа олар әсер етпейді.</div>
+<div class="why" data-lang="ru"><strong>Почему 3:30 правильно?</strong> half past three = 3:30. Даже если слова magnificent и exhibition незнакомы, для вопроса о времени они не нужны.</div>
+</div></div>
+</div></div>
+
+
+<div class="deep-dive">
+<div data-lang="kk"><h2 class="deep-title">Listening – толық стратегия</h2><p class="lead">Төмендегі қадамдарды әр пробникте қайтала. Мақсат – жай дұрыс жауап табу емес, жауаптың аудиода қалай жасырылғанын түсіну.</p></div>
+<div data-lang="ru"><h2 class="deep-title">Listening – полная стратегия</h2><p class="lead">Повторяй эти шаги в каждом пробнике. Цель – не просто угадать ответ, а понять, как он спрятан в аудио.</p></div>
+<div class="deep-grid">
+
+<div class="deep-card"><div data-lang="kk"><h3>1. Сұрақтың түрін алдын ала анықта</h3><p>Аудио басталмай тұрып сұрақтар мен барлық варианттарды оқы. Әр сұрақтың қасына ойша «адам», «орын», «уақыт», «сан», «себеп», «пікір» деп белгі қой. Осылайша тыңдағанда қандай ақпаратты күту керегін білесің.</p><p>Егер варианттар 36%, 20%, 18% сияқты сандар болса – санға ғана емес, сол санның неге қатысты екеніне назар аудар.</p></div><div data-lang="ru"><h3>1. Заранее определи тип вопроса</h3><p>До начала аудио прочитай вопросы и все варианты. Мысленно пометь: «человек», «место», «время», «число», «причина», «мнение». Тогда во время прослушивания ты заранее знаешь, какую информацию ждать.</p><p>Если варианты – 36%, 20%, 18%, слушай не только число, но и к чему именно оно относится.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>2. Тірек сөзді емес, мағынаны тыңда</h3><p>Сұрақтағы сөз аудиода басқа сөзбен берілуі мүмкін. Пробниктерде rose – went up – increased сияқты синонимдер, buy – purchase, goal – aim, desire – wish, problem – issue сияқты жұптар кездеседі.</p><div class="sample"><b>my job is very difficult → I consider my job very hard</b><p>Аудармасы: «Менің жұмысым өте қиын» → «Мен өз жұмысымды өте қиын деп санаймын».</p><div class="answer"><strong>Неге маңызды?</strong> difficult және hard – бір мағынаға жақын. Бірдей сөзді күтсең, жауапты өткізіп аласың.</div></div></div><div data-lang="ru"><h3>2. Слушай смысл, а не только ключевое слово</h3><p>Слово из вопроса в аудио может быть заменено другим. В пробниках встречаются rose – went up – increased, buy – purchase, goal – aim, desire – wish, problem – issue.</p><div class="sample"><b>my job is very difficult → I consider my job very hard</b><p>Перевод: «Моя работа очень трудная» → «Я считаю свою работу очень сложной».</p><div class="answer"><strong>Почему это важно?</strong> difficult и hard близки по смыслу. Если ждать только буквального совпадения, можно пропустить ответ.</div></div></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>3. Бір аудиода бірнеше дұрыс факт болуы мүмкін</h3><p>Мысалы, аудиода бірнеше пайыз, жыл немесе баға айтылса, олардың бәрі мәтін бойынша дұрыс болуы мүмкін. Бірақ сұрақ нақты бір адамды немесе объектіні сұрайды. Сондықтан «сан естідім – таңдадым» әдісі қауіпті.</p><div class="sample"><b>The ticket normally costs £25, but students pay £18.</b><p>Аудармасы: «Билет әдетте £25 тұрады, бірақ студенттер £18 төлейді».</p><div class="answer"><strong>Егер сұрақ студенттің бағасы туралы болса – £18.</strong> £25 те аудиода бар, бірақ ол басқа ақпарат.</div></div></div><div data-lang="ru"><h3>3. В аудио может быть несколько правдивых фактов</h3><p>Если звучат несколько процентов, лет или цен, все они могут быть правильными по тексту. Но вопрос относится к конкретному человеку или объекту. Поэтому стратегия «услышала число – выбрала» опасна.</p><div class="sample"><b>The ticket normally costs £25, but students pay £18.</b><p>Перевод: «Обычно билет стоит £25, но студенты платят £18».</p><div class="answer"><strong>Если вопрос о цене для студента – £18.</strong> £25 тоже есть в аудио, но относится к другой информации.</div></div></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>4. Speaker-лерді бөлек бақыла</h3><p>Бірнеше адам сөйлейтін тапсырмада әр Speaker-ге қысқа белгі жаз: жұмысы, орны, негізгі пікірі. Сұрақтағы Speaker нөмірін міндетті түрде қайта тексер. Бір адамның фактісін екінші адамға ауыстыру – жиі қате.</p><p>Пробниктердегі стратегияда Speaker 1, Speaker 2, Speaker 3, Speaker 4 ақпаратын бөлек ұстау және сұрақ нөмірімен сәйкестендіру маңызды.</p></div><div data-lang="ru"><h3>4. Отслеживай каждого Speaker отдельно</h3><p>Если говорят несколько людей, делай короткую пометку: работа, место, главная мысль. Перед ответом снова проверь номер Speaker. Перенести факт одного человека на другого – частая ошибка.</p><p>В стратегиях пробников важно отдельно держать информацию Speaker 1, Speaker 2, Speaker 3, Speaker 4 и сопоставлять её с номером вопроса.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>5. Өзгеріс сигналдарын тыңда</h3><p>but, however, actually, instead, finally, in the end сөздері алғашқы ақпараттың өзгеруі мүмкін екенін көрсетеді. Бірінші естіген вариантты бірден белгілеме.</p><div class="sample"><b>I’ll take the train. Actually, I’ll take the bus instead.</b><p>Аудармасы: «Мен пойызбен барамын. Жоқ, негізі, оның орнына автобуспен барамын».</p><div class="answer"><strong>Дұрыс жауап – bus.</strong> Actually және instead соңғы шешімнің өзгергенін көрсетеді.</div></div></div><div data-lang="ru"><h3>5. Слушай сигналы изменения</h3><p>but, however, actually, instead, finally, in the end показывают, что первая информация может измениться. Не отмечай первый услышанный вариант автоматически.</p><div class="sample"><b>I’ll take the train. Actually, I’ll take the bus instead.</b><p>Перевод: «Я поеду на поезде. Вообще-то, вместо этого я поеду на автобусе».</p><div class="answer"><strong>Правильный ответ – bus.</strong> Actually и instead показывают финальное изменение решения.</div></div></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>6. Терістеуді өткізіп алма</h3><p>not, never, hardly, rarely, only сияқты сөздер сөйлемнің мағынасын өзгертеді. Таныс сөзді естіп қана вариантты таңдасаң, дәл осы жерде қателесуің мүмкін.</p><p>Сондықтан жауап болатын сөйлемді толық тыңда: кім туралы айтылды, әрекет болды ма, болмады ма, жиі ме, сирек пе?</p></div><div data-lang="ru"><h3>6. Не пропускай отрицание</h3><p>not, never, hardly, rarely, only меняют смысл предложения. Если выбирать вариант только по знакомому слову, именно здесь легко ошибиться.</p><p>Слушай всё предложение: о ком речь, произошло действие или нет, часто или редко?</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>7. Бейтаныс сөзге байланып қалма</h3><p>Сұрақ уақыт туралы болса, бейтаныс сын есім жауапқа кедергі болмауы керек. Бір сөзді түсінбей қалсаң, келесі ақпаратты тыңдауды жалғастыр.</p><div class="sample"><b>The magnificent exhibition… we arrived at half past three.</b><p>Аудармасы: «Керемет көрме… біз үш жарымда келдік».</p><div class="answer"><strong>Жауап – 3:30.</strong> magnificent сөзін білмеу уақытты табуға әсер етпейді.</div></div></div><div data-lang="ru"><h3>7. Не застревай на незнакомом слове</h3><p>Если вопрос о времени, незнакомое прилагательное не должно мешать ответу. Не поняла одно слово – продолжай слушать следующую информацию.</p><div class="sample"><b>The magnificent exhibition… we arrived at half past three.</b><p>Перевод: «Великолепная выставка… мы приехали в половине четвёртого».</p><div class="answer"><strong>Ответ – 3:30.</strong> Незнание magnificent не мешает определить время.</div></div></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>8. Бір сұрақты өткізіп алсаң – келесісін құрбан етпе</h3><p>Жауапты естімей қалсаң, сол жерде ойыңмен қалып қойма. Белгі қой да, келесі сұраққа көш. Әйтпесе бір қатенің орнына үш қате жасайсың.</p><p>Дайындықта кейін transcript арқылы жауаптың қай жерде айтылғанын тап.</p></div><div data-lang="ru"><h3>8. Пропустила один ответ – не жертвуй следующим</h3><p>Если не услышала ответ, не продолжай мысленно сидеть на этом вопросе. Поставь отметку и переходи дальше. Иначе одна ошибка превращается в три.</p><p>На тренировке потом найди нужное место по transcript.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>9. Transcript-пен дұрыс жұмыс істе</h3><p>Тесттен кейін тек дұрыс жауапты қарап қойма. Transcript ішінен жауапты дәлелдейтін сөйлемді тап. Содан кейін сұрақтағы сөз бен аудиодағы сөзді салыстыр. Осы жерден жеке синоним/парафраз тізіміңді жина.</p><p>Мысалы: rose → went up → increased. Бірнеше пробниктен кейін сен қайталанатын тілдік үлгілерді тез тани бастайсың.</p></div><div data-lang="ru"><h3>9. Правильно работай с transcript</h3><p>После теста не ограничивайся правильным ответом. Найди в transcript предложение-доказательство. Затем сравни формулировку вопроса с формулировкой аудио. Из этих пар собирай свой список синонимов и парафразов.</p><p>Например: rose → went up → increased. После нескольких пробников повторяющиеся модели начнут узнаваться быстрее.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>10. Әр қатені себеп бойынша бөл</h3><p>Қате дәптерінде тек Question 5 – B деп жазу аз. Себебін жаз: «санды шатастырдым», «speaker-ді шатастырдым», «синонимді танымадым», «not сөзін өткізіп алдым», «бірінші вариантты асығыс таңдадым».</p><p>Сонда қай дағдың әлсіз екенін нақты көресің.</p></div><div data-lang="ru"><h3>10. Классифицируй каждую ошибку</h3><p>Недостаточно записать Question 5 – B. Запиши причину: «перепутала число», «перепутала speaker», «не узнала синоним», «пропустила not», «слишком рано выбрала первый вариант».</p><p>Так становится видно, какой именно навык слабый.</p></div></div>
+</div></div>
+
+</section>
+
+<section class="section" id="reading">
+<div class="num">02 / READING</div>
+<div data-lang="kk"><h2 class="title">Мәтінді емес.<br>Дәлелді ізде.</h2><p class="lead">Reading-де алдымен сұрақты оқы. Keyword арқылы мәтіннің керек жерін тап, содан кейін жауапты тек мәтіндегі дәлелмен таңда.</p></div>
+<div data-lang="ru"><h2 class="title">Ищи не текст.<br>Ищи доказательство.</h2><p class="lead">В Reading сначала читай вопрос. По keyword найди нужный фрагмент, а затем выбирай ответ только по доказательству из текста.</p></div>
+<div class="cards">
+<div class="card"><div class="n">01</div><h3><span data-lang="kk">Нақты ақпаратты іздеу</span><span data-lang="ru">Поиск конкретной информации</span></h3><p data-lang="kk">Жыл, есім, орын, сан, нақты факт керек болса – бүкіл мәтінді қайта оқымай, сол детальды ізде.</p><p data-lang="ru">Если нужен год, имя, место, число или факт – сканируй текст и ищи именно эту деталь.</p></div>
+<div class="card"><div class="n">02</div><h3><span data-lang="kk">Бірдей сөз қақпаны</span><span data-lang="ru">Ловушка одинакового слова</span></h3><p data-lang="kk">Вариантта мәтіндегі дәл сол сөз тұрғаны оның дұрыс екенін білдірмейді. Мағынасы сұраққа жауап бере ме – соны тексер.</p><p data-lang="ru">Совпавшее слово ещё не делает вариант правильным. Проверяй, отвечает ли смысл предложения на вопрос.</p></div>
+<div class="card"><div class="n">03</div><h3><span data-lang="kk">NOT / EXCEPT сұрақтары</span><span data-lang="ru">Вопросы NOT / EXCEPT</span></h3><p data-lang="kk">Сұрақтағы NOT, EXCEPT сөздерін өткізіп алма. Мұнда мәтінде ЖОҚ вариантты табасың.</p><p data-lang="ru">Не пропускай NOT и EXCEPT. Здесь нужно найти вариант, которого в тексте НЕТ.</p></div>
+</div>
+<div class="strategy">
+<div class="sticky"><div class="eyebrow">READING ALGORITHM</div><h3 data-lang="kk">Evidence first</h3><h3 data-lang="ru">Сначала доказательство</h3><p>question → keyword → scan → paragraph → paraphrase → evidence → answer</p></div>
+<div class="steps">
+<div class="step"><b>Always ≠ Usually</b><p data-lang="kk">always, never, only, all сияқты абсолют сөздерге абай бол. Мәтіндегі usually сөзін always деп ауыстыру – мағынаны өзгертеді.</p><p data-lang="ru">Будь внимательна к always, never, only, all. Замена usually на always меняет утверждение.</p><div class="explain-card">
+<div class="en">Text: Anna usually walks to work.<br>Option: Anna always walks to work.</div>
+<div class="tr" data-lang="kk">Мәтін: Анна әдетте жұмысқа жаяу барады.<br>Вариант: Анна әрқашан жұмысқа жаяу барады.</div>
+<div class="tr" data-lang="ru">Текст: Анна обычно ходит на работу пешком.<br>Вариант: Анна всегда ходит на работу пешком.</div>
+<div class="why" data-lang="kk"><strong>Неге FALSE?</strong> usually = әдетте, ал always = әрқашан. Бұл екі сөздің мағынасы бірдей емес. Вариант мәтіндегі ақпаратты күшейтіп жіберген.</div>
+<div class="why" data-lang="ru"><strong>Почему FALSE?</strong> usually = обычно, а always = всегда. Значения разные: вариант делает утверждение абсолютным, хотя в тексте этого нет.</div>
+</div></div>
+<div class="step"><b>Main idea vs detail</b><p data-lang="kk">Main idea сұрағында бір ғана детальды емес, абзацтың немесе мәтіннің жалпы ойын таңда.</p><p data-lang="ru">В вопросе на main idea выбирай общую мысль абзаца или текста, а не один частный факт.</p></div>
+<div class="step"><b>Reference words</b><p data-lang="kk">she, it, they, this, these сөздерінің кімге немесе неге қатысты екенін тексер.</p><p data-lang="ru">Проверяй, к кому или чему относятся she, it, they, this, these.</p><div class="explain-card">
+<div class="en">Sarah bought a laptop. She uses it daily.</div>
+<div class="tr" data-lang="kk">Аудармасы: Сара ноутбук сатып алды. Ол оны күн сайын қолданады.</div>
+<div class="tr" data-lang="ru">Перевод: Сара купила ноутбук. Она пользуется им каждый день.</div>
+<div class="why" data-lang="kk"><strong>Қалай анықтаймыз?</strong> She – Sarah-ға қатысты, ал it – laptop сөзіне қатысты. Сондықтан pronoun сұрағында есімдіктің алдындағы мағыналық байланысты тексереміз.</div>
+<div class="why" data-lang="ru"><strong>Как определить?</strong> She относится к Sarah, а it – к laptop. В вопросах на pronoun нужно определить, какое существительное заменяет местоимение.</div>
+</div></div>
+</div></div>
+
+
+<div class="deep-dive">
+<div data-lang="kk"><h2 class="deep-title">Reading – толық стратегия</h2><p class="lead">Мәтінді түгел аударуға тырыспа. Сұрақтан мәтінге бар: сұрақ → тірек сөз → абзац → дәлел → жауап.</p></div>
+<div data-lang="ru"><h2 class="deep-title">Reading – полная стратегия</h2><p class="lead">Не пытайся переводить весь текст. Иди от вопроса к тексту: вопрос → ключ → абзац → доказательство → ответ.</p></div>
+<div class="deep-grid">
+
+<div class="deep-card"><div data-lang="kk"><h3>1. Мәтіннен бұрын сұрақтарды қара</h3><p>Сұрақтарды алдын ала оқығанда мәтіннен қандай ақпарат іздейтінің белгілі болады. Есім, дата, сан, жер атауы сияқты ерекше сөздерді белгіле. Олар мәтіннен керек абзацты тез табуға көмектеседі.</p></div><div data-lang="ru"><h3>1. Посмотри вопросы до текста</h3><p>Предварительное чтение вопросов показывает, какую информацию искать. Отмечай имена, даты, числа и названия мест – по ним легче быстро найти нужный абзац.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>2. Skimming және scanning-ті бөлек қолдан</h3><p>Алдымен мәтінді жылдам қарап, әр абзацтың не туралы екенін түсін – бұл жалпы шолу. Кейін нақты сұраққа жауап іздегенде сан, есім, сөз немесе ұғым бойынша керекті жерді тап – бұл нақты іздеу.</p><p>Барлық сұрақ үшін мәтінді қайтадан басынан оқу уақытты жоғалтады.</p></div><div data-lang="ru"><h3>2. Разделяй skimming и scanning</h3><p>Сначала быстро просмотри текст и пойми тему каждого абзаца – это общий обзор. Затем для конкретного вопроса ищи число, имя, слово или понятие – это точечный поиск.</p><p>Перечитывать текст с начала для каждого вопроса – потеря времени.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>3. Парафразды міндетті түрде ізде</h3><p>Дұрыс вариант мәтінді сөзбе-сөз қайталамауы мүмкін. Пробниктерде <b>sent a congratulatory card</b> → <b>sent a card to congratulate them</b>, <b>a lasting marriage</b> → <b>a strong and successful marriage</b> сияқты өзгерістер бар.</p><div class="sample"><b>as fit as fiddles → very healthy and active</b><p>Аудармасы: «өте жақсы физикалық формада» → «дені сау және белсенді».</p><div class="answer"><strong>Ереже:</strong> бірдей сөз емес, бірдей мағына ізде.</div></div></div><div data-lang="ru"><h3>3. Обязательно ищи парафраз</h3><p>Правильный вариант может не повторять текст дословно. В пробниках встречаются <b>sent a congratulatory card</b> → <b>sent a card to congratulate them</b>, <b>a lasting marriage</b> → <b>a strong and successful marriage</b>.</p><div class="sample"><b>as fit as fiddles → very healthy and active</b><p>Перевод: «в прекрасной физической форме» → «очень здоровые и активные».</p><div class="answer"><strong>Правило:</strong> ищи одинаковый смысл, а не одинаковое слово.</div></div></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>4. Бірдей сөз тұрған қате варианттан сақтан</h3><p>Тест жасаушы мәтіндегі сөзді қате вариантқа әдейі көшіре алады. Сен «осы сөзді көрдім» деп таңдайсың, бірақ сөйлемнің мағынасы сұраққа жауап бермейді. Сондықтан вариантты таңдағаннан кейін мәтіндегі толық сөйлеммен салыстыр.</p></div><div data-lang="ru"><h3>4. Остерегайся неправильного варианта с тем же словом</h3><p>Слово из текста могут специально перенести в неправильный вариант. Ты узнаёшь слово и выбираешь его, хотя смысл не отвечает на вопрос. Поэтому сравнивай вариант с полным предложением текста.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>5. Абсолют сөздерге назар аудар</h3><p>always, never, all, only, completely сияқты сөздер тұжырымды күшейтеді. Мәтінде usually немесе sometimes тұрса, always деген вариант дәл болмайды.</p><div class="sample"><b>Text: Anna usually walks to work.<br>Option: Anna always walks to work.</b><p>Аудармасы: «Анна әдетте жұмысқа жаяу барады» / «Анна әрқашан жұмысқа жаяу барады».</p><div class="answer"><strong>Вариант қате.</strong> «Әдетте» мен «әрқашан» бір мағына емес.</div></div></div><div data-lang="ru"><h3>5. Следи за абсолютными словами</h3><p>always, never, all, only, completely усиливают утверждение. Если в тексте usually или sometimes, вариант с always уже неточен.</p><div class="sample"><b>Text: Anna usually walks to work.<br>Option: Anna always walks to work.</b><p>Перевод: «Анна обычно ходит на работу пешком» / «Анна всегда ходит на работу пешком».</p><div class="answer"><strong>Вариант неверный.</strong> «Обычно» и «всегда» – разные значения.</div></div></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>6. NOT және EXCEPT сұрақтарын керісінше шеш</h3><p>Бұл жерде үш вариант мәтінге сәйкес келіп, біреуі сәйкес келмеуі мүмкін. Әр варианттың қасына мәтіннен дәлел бар ма деп тексер. Дәлелі жоқ немесе мәтінге қайшы вариант – іздеп тұрған жауап.</p></div><div data-lang="ru"><h3>6. NOT и EXCEPT решай наоборот</h3><p>Здесь три варианта могут соответствовать тексту, а один – нет. Для каждого варианта проверь, есть ли подтверждение. Тот, у которого нет доказательства или который противоречит тексту, и будет искомым ответом.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>7. Негізгі ойды детальмен шатастырма</h3><p>Main idea сұрағында дұрыс жауап мәтіннің көп бөлігін қамтуы керек. Бір ғана сан, мысал немесе бір абзацтағы факт бүкіл мәтіннің негізгі ойы болмауы мүмкін.</p><p>Әр абзацты 2–4 сөзбен ойша ата. Содан кейін осы абзацтардың ортақ тақырыбын тап.</p></div><div data-lang="ru"><h3>7. Не путай главную мысль с деталью</h3><p>В вопросе на main idea правильный ответ должен охватывать большую часть текста. Одно число, пример или факт из одного абзаца не обязательно является главной мыслью.</p><p>Мысленно назови каждый абзац 2–4 словами, затем найди общую тему.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>8. Ұзын мәтінге карта жаса</h3><p>Мысалы, Madagascar туралы мәтінде east coast, central part, west coast бөлек сипатталады. Сұрақ west coast туралы болса, east coast-тағы rainfall немесе weather фактісін қоспа.</p><p>Әр абзацтың жанына бір сөз жазғандай ойла: EAST – wet, CENTRAL – cooler, WEST – driest.</p></div><div data-lang="ru"><h3>8. Делай карту длинного текста</h3><p>Например, в тексте о Madagascar отдельно описываются east coast, central part и west coast. Если вопрос про west coast, не переноси туда rainfall или weather из east coast.</p><p>Мысленно подпиши абзацы: EAST – wet, CENTRAL – cooler, WEST – driest.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>9. Есімдіктің нені алмастыратынын тап</h3><p>he, she, it, they, this, these сөздерін көргенде алдыңғы сөйлемге қара. Есімдік қай адамды, затты немесе ойды қайталап айтпау үшін қолданылғанын анықта.</p><div class="sample"><b>Sarah bought a laptop. She uses it daily.</b><p>Аудармасы: «Сара ноутбук сатып алды. Ол оны күн сайын қолданады».</p><div class="answer"><strong>She = Sarah, it = laptop.</strong></div></div></div><div data-lang="ru"><h3>9. Определи, что заменяет местоимение</h3><p>Увидев he, she, it, they, this, these, посмотри на предыдущую часть текста. Определи, какого человека, предмет или мысль местоимение заменяет.</p><div class="sample"><b>Sarah bought a laptop. She uses it daily.</b><p>Перевод: «Сара купила ноутбук. Она пользуется им каждый день».</p><div class="answer"><strong>She = Sarah, it = laptop.</strong></div></div></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>10. Байланыстырушы сөздер логиканы көрсетеді</h3><p>however – қарама-қайшылық; because – себеп; therefore, as a result – нәтиже; although – қарама-қайшы екі ойды байланыстырады. Мұндай сөздер тұрған сөйлемді мұқият оқы, өйткені сұраққа керек байланыс сонда болуы мүмкін.</p></div><div data-lang="ru"><h3>10. Связки показывают логику текста</h3><p>however – противопоставление; because – причина; therefore, as a result – результат; although связывает контрастные идеи. Внимательно читай предложения с такими словами – там часто находится нужная логическая связь.</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>11. Мәтіннен тыс логиканы қоспа</h3><p>Вариант өмірде дұрыс болуы мүмкін, бірақ мәтінде айтылмаса – оны таңдауға болмайды. Reading-де «меніңше» емес, «мәтінде дәлел бар ма?» деген сұрақ маңызды.</p></div><div data-lang="ru"><h3>11. Не добавляй логику вне текста</h3><p>Вариант может быть правдой в жизни, но если текст этого не говорит, выбирать его нельзя. В Reading важен вопрос не «как мне кажется?», а «есть ли доказательство в тексте?».</p></div></div>
+
+<div class="deep-card"><div data-lang="kk"><h3>12. Әр жауапқа дәлел көрсет</h3><p>Дайындық кезінде дұрыс жауаптан кейін мәтіндегі дәлел сөйлемді белгіле. Қате жауап болса, екі нәрсені тап: дұрыс вариантты дәлелдейтін сөйлем және сен таңдаған қате варианттың неге сәйкес келмейтіні.</p><p>Осы әдіс кездейсоқ дұрыс жауап пен шынымен түсініп тапқан жауапты ажыратады.</p></div><div data-lang="ru"><h3>12. Для каждого ответа находи доказательство</h3><p>На тренировке после правильного ответа отмечай предложение-доказательство. При ошибке найди две вещи: фразу, подтверждающую правильный вариант, и причину, почему выбранный тобой вариант не подходит.</p><p>Так случайно угаданный ответ отделяется от действительно понятого.</p></div></div>
+</div></div>
+
+</section>
+
+<section class="grammar" id="grammar"><div class="wrap">
+<div class="num">03 / GRAMMAR · 18 QUESTIONS</div>
+<div data-lang="kk"><h2 class="title">Grammar-ды<br>жүйемен жатта.</h2><p class="lead">Пробниктердегі Grammar тек tense емес. Формуланы, marker-ді, тұрақты конструкцияны және сөйлемдегі сигналды бірге үйрен. Төмендегі карта – дайындық кезінде қай тақырыптарды қайталау керегін көрсетеді.</p></div>
+<div data-lang="ru"><h2 class="title">Учи Grammar<br>как систему.</h2><p class="lead">В пробниках Grammar – это не только времена. Учи вместе формулу, marker, устойчивую конструкцию и сигнал в предложении. Карта ниже показывает, какие блоки нужно повторять при подготовке.</p></div>
+
+<div class="grammar-map">
+<div class="g"><span class="tag"><span data-lang="kk">ШАҚТАР</span><span data-lang="ru">ВРЕМЕНА</span></span><h3><span data-lang="kk">Осы шақтар</span><span data-lang="ru">Настоящие времена</span></h3><div class="formula">Present Simple → V1 / V-s<br>Present Continuous → am/is/are + V-ing<br>Present Perfect → have/has + V3<br>Present Perfect Continuous → have/has been + V-ing</div><div class="markers">every day, usually, now, at the moment, since, for, already, yet, all morning</div></div>
+<div class="g"><span class="tag"><span data-lang="kk">ШАҚТАР</span><span data-lang="ru">ВРЕМЕНА</span></span><h3><span data-lang="kk">Өткен және келер шақ</span><span data-lang="ru">Прошедшее и будущее</span></h3><div class="formula">Past Simple → V2<br>Past Continuous → was/were + V-ing<br>Past Perfect → had + V3<br>Past Perfect Continuous → had been + V-ing<br>Future → will + V1 / will be + V-ing</div><div class="markers">yesterday, last, ago, when, by the time, this time next month</div></div>
+<div class="g"><span class="tag"><span data-lang="kk">ЕТІС ЖӘНЕ ҚҰРЫЛЫМ</span><span data-lang="ru">ЗАЛОГ И КОНСТРУКЦИИ</span></span><h3><span data-lang="kk">Ырықсыз етіс және құрылымдар</span><span data-lang="ru">Страдательный залог и конструкции</span></h3><div class="formula">Passive → be + V3<br>Causative → have + object + V3<br>Modal → can/must/should + V1</div><div class="markers" data-lang="kk">Кім істегені емес, әрекет маңызды болса – Passive-ті тексер. Біреуге қызмет жасатсаң – causative құрылымын тексер.</div><div class="markers" data-lang="ru">Если важно действие, а не исполнитель – проверяй Passive. Если действие выполняют для кого-то – проверяй causative.</div></div>
+<div class="g"><span class="tag"><span data-lang="kk">ШАРТТЫ СӨЙЛЕМ</span><span data-lang="ru">УСЛОВНЫЕ ПРЕДЛОЖЕНИЯ</span></span><h3><span data-lang="kk">If құрылымдары</span><span data-lang="ru">Конструкции с If</span></h3><div class="formula">0 → if + Present, Present<br>1 → if + Present, will + V1<br>2 → if + Past, would + V1<br>3 → if + Past Perfect, would have + V3</div><div class="markers" data-lang="kk">Алдымен уақыт пен мағынаны анықта: факт пе, болашақ мүмкіндік пе, қиял ма, әлде өткендегі орындалмаған жағдай ма?</div><div class="markers" data-lang="ru">Сначала определи время и смысл: факт, реальная возможность, нереальная ситуация или сожаление о прошлом?</div></div>
+<div class="g"><span class="tag"><span data-lang="kk">ЕТІСТІК ҮЛГІЛЕРІ</span><span data-lang="ru">ГЛАГОЛЬНЫЕ МОДЕЛИ</span></span><h3><span data-lang="kk">Герундий / Инфинитив</span><span data-lang="ru">Герундий / Инфинитив</span></h3><div class="formula">enjoy / avoid / suggest → V-ing<br>decide / want / would like → to + V1<br>modal verbs → V1</div><div class="markers" data-lang="kk">Мұнда аудармадан бұрын етістіктен кейін қандай форма келетінін жаттау маңызды.</div><div class="markers" data-lang="ru">Здесь важно выучить, какая форма идёт после конкретного глагола, а не выбирать только по переводу.</div></div>
+<div class="g"><span class="tag"><span data-lang="kk">НЕГІЗГІ ТАҚЫРЫПТАР</span><span data-lang="ru">ОСНОВНЫЕ ТЕМЫ</span></span><h3><span data-lang="kk">Тағы не қайталау керек</span><span data-lang="ru">Что ещё повторить</span></h3><div class="formula">Articles · zero article<br>Countable / uncountable<br>Adjective / adverb<br>Comparative / superlative<br>Pronouns · possessives<br>Prepositions · question tags<br>Participles · irregular verbs</div><div class="markers" data-lang="kk">Бір ғана Tenses-ке дайындалма. КТ Grammar бірнеше шағын ережені бір тестте араластырады.</div><div class="markers" data-lang="ru">Не готовь только Tenses. В Grammar КТ в одном тесте смешиваются разные небольшие правила.</div></div>
+</div>
+
+<div class="learnbox">
+<div data-lang="kk"><h3>Жаттап алу керек</h3><p>Кейбір тапсырмаларда ережені «ойлап табу» мүмкін емес – тұрақты құрылымды алдын ала білу керек.</p></div>
+<div data-lang="ru"><h3>Нужно выучить</h3><p>В части заданий правило невозможно вывести на месте – устойчивую конструкцию нужно знать заранее.</p></div>
+<div class="phrases">
+<div class="phrase">suggest + V-ing</div><div class="phrase">enjoy + V-ing</div><div class="phrase">avoid + V-ing</div>
+<div class="phrase">can't stand + V-ing</div><div class="phrase">give up + V-ing</div><div class="phrase">remember + V-ing</div>
+<div class="phrase">decide + to V</div><div class="phrase">would like + to V</div><div class="phrase">modal + V1</div>
+<div class="phrase">interested in</div><div class="phrase">good at</div><div class="phrase">responsible for</div>
+<div class="phrase">depend on</div><div class="phrase">afraid of</div><div class="phrase">in / on / at</div>
+</div></div>
+
+<div class="exam-flow">
+<div class="flow"><small>01</small><b data-lang="kk">Сөйлемді толық оқы</b><b data-lang="ru">Прочитай всё предложение</b></div><div class="arrow">→</div>
+<div class="flow"><small>02</small><b data-lang="kk">Marker тап</b><b data-lang="ru">Найди marker</b></div><div class="arrow">→</div>
+<div class="flow"><small>03</small><b data-lang="kk">Мағынаны анықта</b><b data-lang="ru">Определи смысл</b></div><div class="arrow">→</div>
+<div class="flow"><small>04</small><b data-lang="kk">Формуланы таңда</b><b data-lang="ru">Выбери формулу</b></div><div class="arrow">→</div>
+<div class="flow"><small>05</small><b data-lang="kk">Варианттарды тексер</b><b data-lang="ru">Проверь варианты</b></div>
+</div>
+
+<div class="vocab-zone">
+<div data-lang="kk"><h3>Grammar · терминдер аудармасы</h3><p>Ағылшын терминін көргенде оның не екенін бірден түсіну үшін.</p></div>
+<div data-lang="ru"><h3>Grammar · перевод терминов</h3><p>Чтобы английское название темы сразу было понятно.</p></div>
+<div class="vocab-grid">
+<div class="vocab"><strong>tense</strong><span data-lang="kk">шақ</span><span data-lang="ru">время глагола</span></div>
+<div class="vocab"><strong>present / past / future</strong><span data-lang="kk">осы / өткен / келер шақ</span><span data-lang="ru">настоящее / прошедшее / будущее</span></div>
+<div class="vocab"><strong>passive voice</strong><span data-lang="kk">ырықсыз етіс</span><span data-lang="ru">страдательный залог</span></div>
+<div class="vocab"><strong>modal verb</strong><span data-lang="kk">модаль етістік</span><span data-lang="ru">модальный глагол</span></div>
+<div class="vocab"><strong>conditional</strong><span data-lang="kk">шартты сөйлем</span><span data-lang="ru">условное предложение</span></div>
+<div class="vocab"><strong>gerund</strong><span data-lang="kk">герундий – V-ing формасы</span><span data-lang="ru">герундий – форма V-ing</span></div>
+<div class="vocab"><strong>infinitive</strong><span data-lang="kk">инфинитив – to + V</span><span data-lang="ru">инфинитив – to + V</span></div>
+<div class="vocab"><strong>article</strong><span data-lang="kk">артикль</span><span data-lang="ru">артикль</span></div>
+<div class="vocab"><strong>countable / uncountable</strong><span data-lang="kk">саналатын / саналмайтын</span><span data-lang="ru">исчисляемое / неисчисляемое</span></div>
+<div class="vocab"><strong>adjective / adverb</strong><span data-lang="kk">сын есім / үстеу</span><span data-lang="ru">прилагательное / наречие</span></div>
+<div class="vocab"><strong>comparative / superlative</strong><span data-lang="kk">салыстырмалы / күшейтпелі шырай</span><span data-lang="ru">сравнительная / превосходная степень</span></div>
+<div class="vocab"><strong>pronoun / possessive</strong><span data-lang="kk">есімдік / тәуелдік форма</span><span data-lang="ru">местоимение / притяжательная форма</span></div>
+<div class="vocab"><strong>preposition</strong><span data-lang="kk">предлог, септеулік мәнді сөз</span><span data-lang="ru">предлог</span></div>
+<div class="vocab"><strong>question tag</strong><span data-lang="kk">сұрақтық тіркес: isn't it?, don't you?</span><span data-lang="ru">разделительный вопрос: isn't it?, don't you?</span></div>
+<div class="vocab"><strong>participle</strong><span data-lang="kk">есімше мәнді форма</span><span data-lang="ru">причастие</span></div>
+<div class="vocab"><strong>irregular verb</strong><span data-lang="kk">бұрыс етістік</span><span data-lang="ru">неправильный глагол</span></div>
+<div class="vocab"><strong>marker</strong><span data-lang="kk">ережені тануға көмектесетін белгі сөз</span><span data-lang="ru">слово-сигнал для определения правила</span></div>
+</div></div>
+
+</div></section>
+
+<div class="wrap"><section class="final">
+<div class="eyebrow">MAGIST · PRACTICE</div>
+<div data-lang="kk"><h2>Енді теорияны<br>тестпен бекіт.</h2><p>Осы стратегияларды оқығаннан кейін бірден практика жаса. MAGIST онлайн платформасында тегін тесттер мен жауаптардың түсіндірмелері бар. Қате жауап – жай минус балл емес, келесі жолы қай ережені тану керегін көрсететін белгі.</p></div>
+<div data-lang="ru"><h2>Теперь закрепи<br>теорию тестом.</h2><p>После этих стратегий сразу переходи к практике. На онлайн-платформе MAGIST есть бесплатные тесты и объяснения ответов. Ошибка – это не просто потерянный балл, а подсказка, какое правило нужно научиться узнавать.</p></div>
+<a class="btn" href="https://www.magist.online" target="_blank"><span data-lang="kk">MAGIST-та тегін дайындалу →</span><span data-lang="ru">Готовиться бесплатно на MAGIST →</span></a>
+</section>
+<footer>KT English Guide · MAGIST</footer></div>
+
+<script>
+const root=document.documentElement;
+root.dataset.language=localStorage.getItem("ktlang")||"kk";
+function sync(){document.querySelectorAll("[data-set]").forEach(b=>b.classList.toggle("on",b.dataset.set===root.dataset.language))}
+document.querySelectorAll("[data-set]").forEach(b=>b.onclick=()=>{root.dataset.language=b.dataset.set;localStorage.setItem("ktlang",b.dataset.set);sync()});
+sync();
+</script>
+</body></html>
